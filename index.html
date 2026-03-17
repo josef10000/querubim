@@ -3,89 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Paulinho Querubim Barber Shop - O melhor corte do bairro. Ambiente familiar, preço justo e profissionais de confiança. Agende o seu horário!">
-    <title>Paulinho Querubim Barber Shop | O seu estilo, perto de você</title>
+    <meta name="description" content="Paulinho Querubim Barber Shop - O melhor corte de Carapicuíba. Ambiente premium, preço justo e profissionais de confiança.">
+    <title>Paulinho Querubim Barber Shop | Excelência em cada detalhe</title>
 
-    <!-- Google Fonts: Oswald para títulos (clássico/vintage) e Inter para textos -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            /* Paleta Clássica - Barber Shop Vintage (TRANSPARENT DARK) */
-            --primary-color: #1E3A8A; /* Azul Escuro / Navy */
-            --primary-hover: #172554; /* Azul mais escuro para hover */
-            --secondary-color: #F9FAFB; /* Branco/Gelo para Títulos */
-            
-            /* Cores com Transparência para o Efeito Glass/Imersivo */
-            --bg-card: rgba(26, 26, 26, 0.85); /* Fundo semi-transparente */
-            --bg-card-hover: rgba(35, 35, 35, 0.95);
-            
-            --text-main: #E5E7EB; /* Texto principal claro */
-            --text-muted: #9CA3AF; /* Cinza médio de apoio */
-            --border-color: rgba(255, 255, 255, 0.08); /* Bordas bem sutis */
-            --border-radius: 6px; 
-            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            
-            /* Sombras mais profundas */
-            --shadow-md: 0 10px 30px rgba(0,0,0,0.5);
-            --shadow-lg: 0 15px 40px rgba(0,0,0,0.8);
-            --shadow-glow: 0 0 15px rgba(30, 58, 138, 0.4);
+            --primary: #1e3a8a;      /* Navy Premium */
+            --primary-light: #3b82f6;
+            --accent: #c4a47c;       /* Bronze/Gold para detalhes vintage */
+            --bg-dark: #0a0a0b;
+            --bg-card: rgba(20, 20, 22, 0.7);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --border: rgba(255, 255, 255, 0.08);
+            --radius: 12px;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            outline: none;
         }
 
         html {
             scroll-behavior: smooth;
         }
 
-        /* O SEGREDO DO FUNDO: Imagem fixa com overlay super escuro */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #050505;
-            background-image: linear-gradient(rgba(10, 10, 10, 0.92), rgba(10, 10, 10, 0.95)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop');
+            background-color: var(--bg-dark);
+            background-image: 
+                linear-gradient(rgba(10, 10, 11, 0.85), rgba(10, 10, 11, 0.95)), 
+                url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Efeito Parallax */
+            background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
             font-family: 'Oswald', sans-serif;
-            color: var(--secondary-color);
-            line-height: 1.2;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            color: var(--white);
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        /* --- Animações Keyframes --- */
-        @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(30, 58, 138, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(30, 58, 138, 0); }
-        }
-
-        @keyframes pulse-green {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+            padding: 0 20px;
         }
 
         /* --- Botões --- */
@@ -93,68 +71,41 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 28px;
-            border-radius: var(--border-radius);
+            padding: 16px 32px;
+            border-radius: var(--radius);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
+            font-weight: 700;
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             transition: var(--transition);
             cursor: pointer;
-            gap: 8px;
+            gap: 10px;
             border: none;
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: var(--shadow-md);
-            animation: pulse-blue 2s infinite; /* Adiciona a animação de pulso em azul */
+            background-color: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(30, 58, 138, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-hover);
+            background-color: var(--primary-light);
             transform: translateY(-3px);
-            box-shadow: var(--shadow-lg), var(--shadow-glow);
-            animation: none; /* Para a animação ao passar o mouse */
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.5);
         }
 
         .btn-outline {
-            background-color: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--border);
             backdrop-filter: blur(5px);
         }
 
         .btn-outline:hover {
-            background-color: var(--primary-color);
-            color: white;
-            box-shadow: var(--shadow-glow);
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: white;
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 32px;
-            z-index: 1000;
-            box-shadow: var(--shadow-lg);
-            transition: var(--transition);
-            animation: pulse-green 2s infinite; /* Pulso verde */
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(5deg);
-            animation: none;
+            border-color: var(--primary);
+            background: var(--primary);
         }
 
         /* --- Header --- */
@@ -162,15 +113,11 @@
             position: fixed;
             top: 0;
             width: 100%;
-            z-index: 100;
-            /* Header com efeito blur (vidro jateado) */
-            background-color: rgba(10, 10, 10, 0.85);
+            z-index: 1000;
+            background: rgba(10, 10, 11, 0.8);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: var(--shadow-md);
+            border-bottom: 1px solid var(--border);
             padding: 15px 0;
-            transition: var(--transition);
-            border-bottom: 3px solid var(--primary-color);
         }
 
         .header-flex {
@@ -180,284 +127,201 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--secondary-color);
-            text-decoration: none;
             display: flex;
             align-items: center;
-            gap: 12px;
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            gap: 15px;
+            text-decoration: none;
         }
 
-        /* Estilização exclusiva para o nome Querubim (Letreiro Vintage 3D) */
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
         .brand-name {
-            font-size: 1.8rem;
-            color: #FFFFFF;
-            letter-spacing: 2px;
-            text-shadow: 
-                2px 2px 0px var(--primary-color), 
-                4px 4px 12px rgba(0,0,0,0.8);
-            position: relative;
-            display: inline-block;
-            transition: var(--transition);
-        }
-
-        .brand-name:hover {
-            transform: scale(1.02);
-            text-shadow: 
-                3px 3px 0px var(--primary-color), 
-                0px 0px 15px rgba(30, 58, 138, 0.8);
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            line-height: 1;
         }
 
         .brand-subtitle {
-            display: block;
-            font-family: 'Oswald', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 5px;
-            color: var(--text-muted);
-            text-shadow: none;
-            margin-top: -2px;
-            transition: var(--transition);
-        }
-
-        .logo:hover .brand-subtitle {
-            color: var(--primary-color);
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            color: var(--accent);
+            font-weight: 600;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 30px;
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 600;
             text-transform: uppercase;
-            font-size: 0.9rem;
             transition: var(--transition);
-            letter-spacing: 0.5px;
         }
 
         nav a:hover {
-            color: var(--primary-color);
-            text-shadow: 0 0 8px rgba(30, 58, 138, 0.5);
+            color: var(--primary-light);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            color: var(--secondary-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
-            padding-top: 190px; /* Aumentado para dar mais respiro abaixo do cabeçalho maior */
-            padding-bottom: 100px;
-            /* Removida a cor de fundo sólida para ver a imagem de trás */
-            background: transparent;
+            padding: 220px 0 120px;
+            text-align: center;
         }
 
-        .hero-grid {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            max-width: 800px;
+        .hero-content {
+            max-width: 850px;
             margin: 0 auto;
         }
 
-        .hero-text h1 {
-            font-size: clamp(2.8rem, 6vw, 4.5rem);
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-            text-shadow: 0 4px 15px rgba(0,0,0,0.8);
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 25px;
         }
 
-        .hero-text h1 span {
-            color: var(--primary-color);
+        .hero h1 span {
+            color: var(--accent);
             display: block;
         }
 
-        .hero-text p {
+        .hero p {
             font-size: 1.2rem;
-            color: #D1D5DB;
+            color: var(--text-muted);
             margin-bottom: 40px;
-            max-width: 600px;
             font-weight: 300;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
 
-        /* --- Sections Gerais --- */
+        /* --- Grid & Cards --- */
         section {
             padding: 100px 0;
-            position: relative;
         }
 
-        .section-header {
+        .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
 
-        .section-header h2 {
-            font-size: 2.8rem;
+        .section-title h2 {
+            font-size: 2.5rem;
             margin-bottom: 15px;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }
 
-        .section-header p {
+        .section-title p {
             color: var(--text-muted);
             max-width: 600px;
             margin: 0 auto;
-            font-size: 1.1rem;
         }
 
-        /* Estilo compartilhado para os cartões Glassmorphism */
         .glass-card {
             background: var(--bg-card);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
             transition: var(--transition);
         }
 
         .glass-card:hover {
-            background: var(--bg-card-hover);
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg), var(--shadow-glow);
-            border-color: rgba(30, 58, 138, 0.5);
+            border-color: var(--primary);
+            transform: translateY(-5px);
+            background: rgba(30, 58, 138, 0.1);
         }
 
-        /* --- Benefícios --- */
+        /* --- Features --- */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
         }
 
         .feature-card {
-            padding: 40px 30px;
-            border-radius: var(--border-radius);
+            padding: 40px;
             text-align: center;
-            border-bottom: 4px solid var(--primary-color);
         }
 
         .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.4), rgba(30, 58, 138, 0.1));
-            color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 25px;
-            border: 1px solid rgba(30, 58, 138, 0.5);
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            display: block;
         }
 
-        .feature-card h3 {
-            font-size: 1.4rem;
-            margin-bottom: 12px;
-        }
-
-        .feature-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 300;
-        }
-
-        /* --- Serviços --- */
-        .services-wrapper {
+        /* --- Services --- */
+        .services-list {
             max-width: 800px;
             margin: 0 auto;
-            border-radius: var(--border-radius);
-            padding: 50px;
+            padding: 40px;
         }
 
         .service-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 25px 20px;
-            border-bottom: 1px dashed rgba(255,255,255,0.1);
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
             transition: var(--transition);
-            border-radius: var(--border-radius);
-            cursor: pointer; /* Muda o cursor para a mãozinha */
+            border-radius: 8px;
+            cursor: pointer;
         }
 
-        /* Efeito ao passar o rato ou tocar no ecrã (Mobile First) */
         .service-item:hover {
-            background-color: rgba(30, 58, 138, 0.4); /* Fundo Azul Escuro com transparência */
-            box-shadow: inset 4px 0 0 var(--primary-color); /* Faixa de destaque lateral */
-            transform: translateX(8px); /* Desliza ligeiramente para a direita */
-            border-bottom-color: transparent;
+            background: rgba(255,255,255,0.05);
+            padding-left: 30px;
         }
 
-        .service-item:last-child {
-            border-bottom: none;
+        .service-name h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
 
-        .service-info h4 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--secondary-color);
-            letter-spacing: 0.5px;
-        }
-
-        .service-info p {
+        .service-name p {
+            font-size: 0.9rem;
             color: var(--text-muted);
-            font-size: 0.95rem;
-            font-weight: 300;
         }
 
         .service-price {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #FFFFFF;
-            background: var(--primary-color);
-            padding: 10px 20px;
-            border-radius: var(--border-radius);
             font-family: 'Oswald', sans-serif;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 10px rgba(30, 58, 138, 0.3);
+            font-size: 1.4rem;
+            color: var(--accent);
+            font-weight: 700;
         }
 
-        /* --- Galeria --- */
+        /* --- Gallery --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        .gallery-img {
-            width: 100%;
+        .gallery-item {
             height: 350px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow-md);
             transition: var(--transition);
-            filter: grayscale(0.8) contrast(1.2);
-            border: 2px solid var(--border-color);
+            filter: grayscale(40%);
         }
 
-        .gallery-img:hover {
-            transform: scale(1.05) translateY(-5px);
-            box-shadow: var(--shadow-lg), var(--shadow-glow);
-            filter: grayscale(0) contrast(1.1);
-            border-color: var(--primary-color);
-            z-index: 2;
-            position: relative;
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
         }
 
-        /* --- Depoimentos --- */
+        /* --- Testimonials --- */
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -465,663 +329,390 @@
         }
 
         .testimonial-card {
-            padding: 40px 30px;
-            border-radius: var(--border-radius);
-            border-left: 4px solid var(--primary-color);
+            padding: 40px;
         }
 
         .stars {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            letter-spacing: 2px;
+            color: var(--accent);
+            margin-bottom: 15px;
         }
 
-        .testimonial-card p {
-            color: #D1D5DB;
-            margin-bottom: 25px;
-            font-style: italic;
-            font-weight: 300;
-        }
-
-        .client-name {
-            font-weight: 600;
-            color: var(--secondary-color);
-            font-family: 'Oswald', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 1.1rem;
-        }
-
-        /* --- Localização e Contato --- */
-        /* Uma camada extra escura para a localização se destacar */
-        #localizacao::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0,0,0,0.6);
-            z-index: -1;
-        }
-
-        .location-grid {
+        /* --- Footer & Contact --- */
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.2fr;
             gap: 40px;
-            color: var(--text-main);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            border-top: 5px solid var(--primary-color);
+            align-items: stretch;
         }
 
-        .location-info {
-            padding: 50px 40px;
+        .contact-info {
+            padding: 40px;
         }
 
-        .info-item {
+        .info-block {
             display: flex;
             gap: 20px;
             margin-bottom: 30px;
         }
 
-        .info-item i {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-top: 5px;
-            text-shadow: 0 0 10px rgba(30, 58, 138, 0.5);
+        .info-block i {
+            color: var(--accent);
+            font-size: 1.5rem;
         }
 
-        .info-item strong {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            color: var(--secondary-color);
-        }
-
-        .map-container {
-            padding: 10px;
-        }
-        
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
+        .map-box {
+            border-radius: var(--radius);
+            overflow: hidden;
             min-height: 400px;
-            border: none;
-            border-radius: var(--border-radius);
         }
 
-        /* --- Footer --- */
         footer {
-            background-color: #000000;
-            color: white;
-            padding: 50px 0 30px;
+            padding: 80px 0 40px;
+            background: #050505;
             text-align: center;
-            border-top: 4px solid var(--primary-color);
+            border-top: 1px solid var(--border);
         }
 
-        .footer-socials {
-            margin: 25px 0;
+        .social-links {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .footer-socials a {
-            color: white;
-            font-size: 1.8rem;
-            margin: 0 12px;
+        .social-links a {
+            font-size: 1.5rem;
+            color: var(--white);
             transition: var(--transition);
         }
 
-        .footer-socials a:hover {
-            color: var(--primary-color);
-            transform: scale(1.2);
+        .social-links a:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
         }
 
-        /* --- Animações Scroll Reveal --- */
+        /* --- Modal --- */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: none;
+            place-items: center;
+            padding: 20px;
+        }
+
+        .modal.active { display: grid; }
+
+        .modal-card {
+            background: #111;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: var(--radius);
+            border: 1px solid var(--primary);
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background: #1a1a1a;
+            border: 1px solid var(--border);
+            color: white;
+            border-radius: 8px;
+        }
+
+        /* --- Mobile --- */
+        #menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 992px) {
+            nav ul { display: none; }
+            #menu-toggle { display: block; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3rem; }
+        }
+
+        /* WhatsApp Float */
+        .whatsapp-link {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25d366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 2rem;
+            color: white;
+            z-index: 1000;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         .reveal {
             opacity: 0;
-            transform: translateY(40px);
-            transition: 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateY(30px);
+            transition: 0.8s all ease;
         }
 
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* --- Modal de Agendamento --- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: var(--bg-card);
-            border: 1px solid var(--primary-color);
-            border-radius: var(--border-radius);
-            width: 90%;
-            max-width: 450px;
-            padding: 40px 30px;
-            position: relative;
-            transform: translateY(-20px) scale(0.95);
-            transition: var(--transition);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.9), 0 0 20px rgba(30, 58, 138, 0.4);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0) scale(1);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--primary-color);
-        }
-
-        .modal-header h3 {
-            font-size: 2rem;
-            margin-bottom: 5px;
-            color: var(--secondary-color);
-        }
-
-        .modal-header p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            color: var(--secondary-color);
-            font-family: 'Oswald', sans-serif;
-            letter-spacing: 1px;
-            font-size: 1.1rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--border-color);
-            color: white;
-            border-radius: var(--border-radius);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(30, 58, 138, 0.4);
-        }
-
-        select.form-control option {
-            background: var(--bg-main);
-            color: white;
-        }
-
-        /* Mudando o ícone do calendário no input date para ficar claro */
-        ::-webkit-calendar-picker-indicator {
-            filter: invert(1);
-            cursor: pointer;
-        }
-
-        /* --- Responsividade --- */
-        @media (max-width: 992px) {
-            .location-grid {
-                grid-template-columns: 1fr;
-            }
-            nav ul {
-                display: none;
-            }
-            .mobile-menu-btn {
-                display: block;
-            }
-            .header-actions .btn {
-                display: none; 
-            }
-        }
-
-        @media (max-width: 768px) {
-            section { padding: 70px 0; }
-            .hero { padding-top: 180px; } /* Aumentado de 130px para 180px no mobile */
-            .hero-text h1 { font-size: 2.5rem; }
-            .services-wrapper { padding: 30px 20px; }
-            .service-item { flex-direction: column; align-items: flex-start; gap: 15px; }
-            .location-info { padding: 30px 20px; }
-            .map-container iframe { min-height: 300px; }
-        }
     </style>
 </head>
 <body>
 
-    <!-- WhatsApp Flutuante -->
-    <a href="#" onclick="abrirModal(event)" class="whatsapp-float">
+    <a href="#" onclick="abrirModal(event)" class="whatsapp-link">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Cabeçalho -->
     <header>
         <div class="container header-flex">
             <a href="#" class="logo">
-                <img src="https://i.imgur.com/RkQOd5I.png" alt="Paulinho Querubim Logo" style="height: 45px; width: auto; filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.8));">
-                <div style="display: flex; flex-direction: column;">
+                <img src="https://i.imgur.com/RkQOd5I.png" alt="Logo" height="50">
+                <div class="logo-text">
                     <span class="brand-name">Paulinho Querubim</span>
-                    <span class="brand-subtitle">BARBER SHOP</span>
+                    <span class="brand-subtitle">Barber Shop</span>
                 </div>
             </a>
             <nav>
                 <ul>
-                    <li><a href="#sobre">Nossa Cara</a></li>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Diferenciais</a></li>
                     <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#localizacao">Onde Estamos</a></li>
+                    <li><a href="#galeria">Trabalhos</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
-            <div class="header-actions">
-            <a href="#" onclick="abrirModal(event)" class="btn btn-primary">Agendar Horário</a>
-            <i class="fas fa-bars mobile-menu-btn" id="menu-toggle"></i>
+            <div style="display: flex; align-items: center; gap: 20px;">
+                <a href="#" onclick="abrirModal(event)" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.8rem;">Agendar</a>
+                <i class="fas fa-bars" id="menu-toggle"></i>
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- Menu Mobile -->
-<div id="mobile-menu" style="display:none; position:fixed; top:75px; left:0; width:100%; background:rgba(10,10,10,0.98); backdrop-filter:blur(10px); z-index:99; padding:30px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.8); border-bottom: 3px solid var(--primary-color);">
-    <ul style="list-style:none; display:flex; flex-direction:column; gap:25px; text-align:center;">
-        <li><a href="#sobre" class="m-link" style="color:var(--text-main); text-decoration:none; font-family:'Oswald', sans-serif; font-size:1.3rem; text-transform:uppercase;">Nossa Cara</a></li>
-        <li><a href="#servicos" class="m-link" style="color:var(--text-main); text-decoration:none; font-family:'Oswald', sans-serif; font-size:1.3rem; text-transform:uppercase;">Serviços</a></li>
-        <li><a href="#galeria" class="m-link" style="color:var(--text-main); text-decoration:none; font-family:'Oswald', sans-serif; font-size:1.3rem; text-transform:uppercase;">Galeria</a></li>
-        <li><a href="#localizacao" class="m-link" style="color:var(--text-main); text-decoration:none; font-family:'Oswald', sans-serif; font-size:1.3rem; text-transform:uppercase;">Onde Estamos</a></li>
-        <li><a href="#" onclick="abrirModal(event); document.getElementById('mobile-menu').style.display='none';" class="btn btn-primary" style="display:block; margin-top:15px; font-size: 1.1rem;">Agendar Agora</a></li>
-    </ul>
-</div>
-
-    <!-- Hero Section (Destaque Principal) -->
     <section class="hero" id="home">
-        <div class="container hero-grid">
-            <div class="hero-text reveal">
-                <h1>O corte de respeito, <br><span>no coração do seu bairro.</span></h1>
-                <p>A Paulinho Querubim Barber Shop une ambiente familiar, limpeza impecável e aquele talento na tesoura e na máquina. Vem tomar um café com a gente e dar um trato no visual!</p>
-                <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                    <a href="#" onclick="abrirModal(event)" class="btn btn-primary">
-                        <i class="fab fa-whatsapp"></i> Marcar meu horário
-                    </a>
-                    <a href="#servicos" class="btn btn-outline">Ver Preços</a>
-                </div>
+        <div class="container hero-content reveal">
+            <h1>O Estilo que Você Merece <span>No Coração do Bairro</span></h1>
+            <p>Combine a tradição das barbearias clássicas com o conforto moderno. Profissionais especializados em transformar seu visual com precisão e capricho.</p>
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <a href="#" onclick="abrirModal(event)" class="btn btn-primary">Agendar Agora</a>
+                <a href="#servicos" class="btn btn-outline">Nossos Preços</a>
             </div>
         </div>
     </section>
 
-    <!-- Por que nos escolher (Ambiente) -->
     <section id="sobre">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>A barbearia da família</h2>
-                <p>Aqui não tem frescura, mas tem muito capricho. Preparamos um espaço organizado e confortável para você e seus filhos.</p>
+            <div class="section-title reveal">
+                <h2>Por que nos escolher?</h2>
+                <p>Mais que um corte, uma experiência pensada para o seu bem-estar.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card glass-card reveal">
-                    <div class="feature-icon"><i class="fas fa-home"></i></div>
-                    <h3>Ambiente Climatizado</h3>
-                    <p>Espaço sempre limpo, organizado e fresquinho para você relaxar enquanto espera.</p>
+                    <i class="fas fa-coffee feature-icon"></i>
+                    <h3>Café & Conexão</h3>
+                    <p>Wi-Fi de alta velocidade e aquele café fresquinho para sua espera ser um prazer.</p>
                 </div>
                 <div class="feature-card glass-card reveal">
-                    <div class="feature-icon"><i class="fas fa-wifi"></i></div>
-                    <h3>Wi-Fi & Café Grátis</h3>
-                    <p>Sente, conecte-se à nossa rede e tome um café fresquinho por nossa conta.</p>
+                    <i class="fas fa-snowflake feature-icon"></i>
+                    <h3>Climatização</h3>
+                    <p>Ambiente moderno e climatizado para o máximo conforto em qualquer estação.</p>
                 </div>
                 <div class="feature-card glass-card reveal">
-                    <div class="feature-icon"><i class="fas fa-child"></i></div>
-                    <h3>Corte Infantil</h3>
-                    <p>Temos paciência e jeito com a criançada. O visual dos pequenos fica no estilo.</p>
-                </div>
-                <div class="feature-card glass-card reveal">
-                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                    <h3>Sem Fila Longa</h3>
-                    <p>Trabalhamos com horário marcado via WhatsApp para você não perder seu dia.</p>
+                    <i class="fas fa-child feature-icon"></i>
+                    <h3>Espaço Kids</h3>
+                    <p>Atendimento especializado e paciente para os pequenos saírem no estilo.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços e Preços Transparentes -->
     <section id="servicos">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>Serviços e Valores</h2>
-                <p>Trabalho bem feito com um preço justo. Escolha o seu serviço e agende com a gente.</p>
+            <div class="section-title reveal">
+                <h2>Nossos Serviços</h2>
+                <p>Preços transparentes e serviços de alta qualidade.</p>
             </div>
-            <div class="services-wrapper glass-card reveal">
+            <div class="services-list glass-card reveal">
                 <div class="service-item" onclick="abrirModal(event)">
-                    <div class="service-info">
-                        <h4>Corte Social / Clássico</h4>
-                        <p>O tradicional bem feito na tesoura ou máquina.</p>
+                    <div class="service-name">
+                        <h4>Corte Clássico</h4>
+                        <p>Máquina ou tesoura com acabamento fino.</p>
                     </div>
                     <div class="service-price">R$ 30</div>
                 </div>
                 <div class="service-item" onclick="abrirModal(event)">
-                    <div class="service-info">
-                        <h4>Corte Degradê / Disfarçado</h4>
-                        <p>Acabamento perfeito, navalhado e alinhado.</p>
+                    <div class="service-name">
+                        <h4>Degradê Premium</h4>
+                        <p>Navalhado ou disfarçado com técnica avançada.</p>
                     </div>
                     <div class="service-price">R$ 35</div>
                 </div>
                 <div class="service-item" onclick="abrirModal(event)">
-                    <div class="service-info">
-                        <h4>Barba Simples ou Modelada</h4>
-                        <p>Aparada, desenhada com navalha e loção pós-barba.</p>
+                    <div class="service-name">
+                        <h4>Barboterapia</h4>
+                        <p>Toalha quente, óleos essenciais e hidratação.</p>
                     </div>
                     <div class="service-price">R$ 25</div>
                 </div>
                 <div class="service-item" onclick="abrirModal(event)">
-                    <div class="service-info">
-                        <h4>Corte Infantil</h4>
-                        <p>Atendimento especial para crianças até 12 anos.</p>
-                    </div>
-                    <div class="service-price">R$ 30</div>
-                </div>
-                <div class="service-item" onclick="abrirModal(event)">
-                    <div class="service-info">
-                        <h4>Combo: Cabelo + Barba</h4>
-                        <p>O trato completo para você sair zerado.</p>
+                    <div class="service-name">
+                        <h4>Combo Completo</h4>
+                        <p>Cabelo e barba para um visual renovado.</p>
                     </div>
                     <div class="service-price">R$ 55</div>
                 </div>
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="#" onclick="abrirModal(event)" class="btn btn-primary" style="width: 100%; max-width: 320px;">Agendar Serviço Agora</a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- Galeria Simples e Direta -->
     <section id="galeria">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>Nosso Trabalho</h2>
-                <p>Confira um pouco do que fazemos no dia a dia da barbearia.</p>
+            <div class="section-title reveal">
+                <h2>Galeria de Estilos</h2>
+                <p>Confira alguns resultados reais feitos em nossa barbearia.</p>
             </div>
             <div class="gallery-grid">
-                <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800&auto=format&fit=crop" alt="Corte Degradê" class="gallery-img reveal">
-                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800&auto=format&fit=crop" alt="Barba alinhada" class="gallery-img reveal">
-                <img src="https://images.unsplash.com/photo-1593702275687-f8b402bf1fb5?q=80&w=800&auto=format&fit=crop" alt="Cliente satisfeito" class="gallery-img reveal">
-                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" alt="Ambiente da barbearia" class="gallery-img reveal">
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800" alt="Corte"></div>
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=800" alt="Barba"></div>
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800" alt="Ambiente"></div>
+                <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=800" alt="Detalhe"></div>
             </div>
         </div>
     </section>
 
-    <!-- Depoimentos (Prova Social) -->
-    <section>
+    <section id="contato">
         <div class="container">
-            <div class="section-header reveal">
-                <h2>O que dizem os clientes</h2>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card glass-card reveal">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"Levo meus dois filhos todo mês. O pessoal é super paciente, o lugar é limpo e o preço é justíssimo. Recomendo muito!"</p>
-                    <span class="client-name">Carlos Eduardo</span>
-                </div>
-                <div class="testimonial-card glass-card reveal">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"Melhor degradê do bairro, sem dúvidas. Agendo pelo WhatsApp, chego e sou atendido na hora. Zero dor de cabeça."</p>
-                    <span class="client-name">Lucas Silva</span>
-                </div>
-                <div class="testimonial-card glass-card reveal">
-                    <div class="stars">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                    </div>
-                    <p>"Ambiente super agradável. Fico tomando um café enquanto espero, rola uma música boa. Já virou minha barbearia fixa."</p>
-                    <span class="client-name">Fernando M.</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Localização (Destaque Azul) -->
-    <section id="localizacao">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Vem dar um trato no visual!</h2>
-                <p>Estamos pertinho de você, num ponto de fácil acesso.</p>
-            </div>
-            <div class="location-grid glass-card reveal">
-                <div class="location-info">
-                    <h3 style="color: var(--secondary-color); margin-bottom: 35px; font-size: 2rem;">Paulinho Querubim Barber Shop</h3>
-                    
-                    <div class="info-item">
+            <div class="contact-grid">
+                <div class="contact-info glass-card reveal">
+                    <h3>Onde Estamos</h3>
+                    <div class="info-block">
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
-                            <strong>Nosso Endereço</strong><br>
-                            <span style="color: var(--text-muted);">Av. Victorio Fornazaro, 1979<br>
-                            Vila Lourdes, Carapicuíba - SP, 06397-000</span>
+                            <strong>Endereço</strong><br>
+                            Av. Victorio Fornazaro, 1979<br>Carapicuíba - SP
                         </div>
                     </div>
-                    
-                    <div class="info-item">
+                    <div class="info-block">
                         <i class="fas fa-clock"></i>
                         <div>
-                            <strong>Horário de Funcionamento</strong><br>
-                            <span style="color: var(--text-muted);">Terça a Sexta: 09h às 19h<br>
-                            Sábado: 08h às 18h<br>
-                            <em>(Fechado aos Domingos e Segundas)</em></span>
+                            <strong>Horários</strong><br>
+                            Ter - Sex: 09h às 19h<br>Sáb: 08h às 18h
                         </div>
                     </div>
-
-                    <div class="info-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <strong>Contato / WhatsApp</strong><br>
-                            <span style="color: var(--text-muted);">(11) 90000-0000</span>
-                        </div>
-                    </div>
-
-                    <a href="#" onclick="abrirModal(event)" class="btn btn-primary" style="margin-top: 25px;">
-                        <i class="fab fa-whatsapp"></i> Agendar Agora
-                    </a>
+                    <a href="#" onclick="abrirModal(event)" class="btn btn-primary" style="width: 100%;">Falar com a gente</a>
                 </div>
-                <div class="map-container">
-                    <!-- Mapa atualizado com o endereço real -->
-                    <iframe src="https://www.google.com/maps?q=Av.+Victorio+Fornazaro,+1979+-+Vila+Lourdes,+Carapicuíba+-+SP,+06397-000&output=embed" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-box reveal">
+                    <iframe src="https://www.google.com/maps?q=Av.+Victorio+Fornazaro,+1979+-+Vila+Lourdes,+Carapicuíba+-+SP&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
     <footer>
         <div class="container">
-            <div style="margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 12px;">
-                <img src="https://i.imgur.com/RkQOd5I.png" alt="Paulinho Querubim Logo" style="height: 55px; width: auto; filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.8));">
-                <div style="display: flex; flex-direction: column; align-items: flex-start;">
-                    <h2 style="margin: 0;"><span class="brand-name" style="font-size: 2.2rem;">Paulinho Querubim</span></h2>
-                    <span class="brand-subtitle" style="font-size: 0.9rem; color: var(--primary-color); letter-spacing: 6px;">BARBER SHOP</span>
-                </div>
-            </div>
-            <div class="footer-socials">
+            <img src="https://i.imgur.com/RkQOd5I.png" alt="Logo" height="60">
+            <div class="social-links">
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-google"></i></a>
             </div>
-            <p style="color: #6B7280; font-size: 0.95rem;">
-                &copy; 2026 Paulinho Querubim Barber Shop. O clássico nunca sai de moda.
-            </p>
+            <p>&copy; 2026 Paulinho Querubim Barber Shop. Qualidade e Respeito.</p>
         </div>
     </footer>
 
-    <!-- MODAL DE AGENDAMENTO -->
-    <div class="modal-overlay" id="agendamentoModal">
-        <div class="modal-content">
+    <!-- Modal -->
+    <div class="modal" id="modalAgendamento">
+        <div class="modal-card">
             <i class="fas fa-times close-modal" onclick="fecharModal()"></i>
-            <div class="modal-header" style="text-align: center;">
-                <h3>Agendar Horário</h3>
-                <p>Preencha os detalhes para reservar o seu lugar.</p>
-            </div>
-            
-            <form id="formAgendamento">
+            <h3 style="margin-bottom: 20px;">Reservar Horário</h3>
+            <form id="formWpp">
                 <div class="form-group">
-                    <label for="servicoSelect"><i class="fas fa-cut" style="margin-right: 8px;"></i>Qual o serviço?</label>
-                    <select id="servicoSelect" class="form-control" required>
-                        <option value="" disabled selected>Escolha um serviço...</option>
-                        <option value="Corte Social/Clássico">Corte Social / Clássico - R$ 30</option>
-                        <option value="Corte Degradê">Corte Degradê - R$ 35</option>
-                        <option value="Barba">Barba (Simples ou Modelada) - R$ 25</option>
-                        <option value="Corte Infantil">Corte Infantil - R$ 30</option>
-                        <option value="Combo Cabelo e Barba">Combo: Cabelo + Barba - R$ 55</option>
+                    <label>Serviço</label>
+                    <select class="form-control" id="servico" required>
+                        <option value="Corte Clássico">Corte Clássico</option>
+                        <option value="Degradê">Degradê Premium</option>
+                        <option value="Barba">Barba</option>
+                        <option value="Combo">Combo Completo</option>
                     </select>
                 </div>
-
                 <div class="form-group">
-                    <label for="dataSelect"><i class="fas fa-calendar-alt" style="margin-right: 8px;"></i>Qual a data?</label>
-                    <input type="date" id="dataSelect" class="form-control" required>
+                    <label>Data</label>
+                    <input type="date" class="form-control" id="data" required>
                 </div>
-
                 <div class="form-group">
-                    <label for="horaSelect"><i class="fas fa-clock" style="margin-right: 8px;"></i>Qual o horário?</label>
-                    <select id="horaSelect" class="form-control" required>
-                        <option value="" disabled selected>Escolha um horário...</option>
-                        <option value="09:00">09:00</option>
-                        <option value="10:00">10:00</option>
-                        <option value="11:00">11:00</option>
-                        <option value="13:00">13:00</option>
-                        <option value="14:00">14:00</option>
-                        <option value="15:00">15:00</option>
-                        <option value="16:00">16:00</option>
-                        <option value="17:00">17:00</option>
-                        <option value="18:00">18:00</option>
-                    </select>
+                    <label>Hora</label>
+                    <input type="time" class="form-control" id="hora" required>
                 </div>
-
-                <button type="button" class="btn btn-primary" style="width: 100%; margin-top: 15px;" onclick="enviarAgendamento()">
-                    <i class="fab fa-whatsapp"></i> Confirmar via WhatsApp
-                </button>
+                <button type="button" class="btn btn-primary" style="width: 100%;" onclick="enviar()">Confirmar no WhatsApp</button>
             </form>
         </div>
     </div>
 
     <script>
-        // Funções do Modal de Agendamento
-        const modal = document.getElementById('agendamentoModal');
-        
-        // Bloqueia datas passadas no calendário
-        const dataInput = document.getElementById('dataSelect');
-        const hoje = new Date().toISOString().split('T')[0];
-        dataInput.setAttribute('min', hoje);
+        // Modal Logic
+        const modal = document.getElementById('modalAgendamento');
+        function abrirModal(e) { e.preventDefault(); modal.classList.add('active'); }
+        function fecharModal() { modal.classList.remove('active'); }
+        window.onclick = (e) => { if(e.target == modal) fecharModal(); }
 
-        function abrirModal(e) {
-            if(e) e.preventDefault();
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Impede o site de rolar fundo
-        }
-
-        function fecharModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Volta a rolagem do site
-        }
-
-        // Fecha o modal clicando fora dele
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                fecharModal();
-            }
-        });
-
-        // Função para formatar a data (AAAA-MM-DD para DD/MM/AAAA)
-        function formatarData(dataIso) {
-            const partes = dataIso.split('-');
-            return `${partes[2]}/${partes[1]}/${partes[0]}`;
-        }
-
-        function enviarAgendamento() {
-            const servico = document.getElementById('servicoSelect').value;
-            const data = document.getElementById('dataSelect').value;
-            const hora = document.getElementById('horaSelect').value;
-
-            if (!servico || !data || !hora) {
-                alert("Por favor, preencha todos os campos antes de confirmar!");
-                return;
-            }
-
-            const dataFormatada = formatarData(data);
+        // Whatsapp Logic
+        function enviar() {
+            const serv = document.getElementById('servico').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+            if(!data || !hora) return alert("Preencha a data e hora!");
             
-            // Monta a mensagem personalizada
-            const mensagem = `Olá, Paulinho Querubim Barber Shop! 💈\nGostaria de agendar um horário:\n\n✂️ *Serviço:* ${servico}\n📅 *Data:* ${dataFormatada}\n⏰ *Horário:* ${hora}\n\nPodem confirmar se está disponível?`;
-            
-            // Link do WhatsApp com a mensagem codificada
-            const telefone = "5511900000000"; // Substitua pelo seu número real
-            const linkWhatsapp = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
-
-            // Redireciona para o WhatsApp
-            window.open(linkWhatsapp, '_blank');
+            const msg = `Olá! Gostaria de agendar:\n✂️ *${serv}*\n📅 *Data:* ${data}\n⏰ *Hora:* ${hora}`;
+            window.open(`https://wa.me/5511900000000?text=${encodeURIComponent(msg)}`, '_blank');
             fecharModal();
         }
 
-        // Animação de entrada suave
+        // Reveal Animation
         function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                if (elementTop < windowHeight - 80) {
-                    reveals[i].classList.add("active");
-                }
-            }
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) el.classList.add("active");
+            });
         }
         window.addEventListener("scroll", reveal);
         window.addEventListener("load", reveal);
-
-        // Menu Mobile Toggle
-        const menuBtn = document.getElementById('menu-toggle');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mLinks = document.querySelectorAll('.m-link');
-
-        menuBtn.addEventListener('click', () => {
-            if (mobileMenu.style.display === 'none' || mobileMenu.style.display === '') {
-                mobileMenu.style.display = 'block';
-                menuBtn.classList.replace('fa-bars', 'fa-times');
-            } else {
-                mobileMenu.style.display = 'none';
-                menuBtn.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-
-        mLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.style.display = 'none';
-                menuBtn.classList.replace('fa-times', 'fa-bars');
-            });
-        });
     </script>
 </body>
 </html>
